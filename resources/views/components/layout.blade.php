@@ -10,6 +10,17 @@
 </head>
 <body>
 <main>
+    <nav class="flex h-12">
+        <ul class="flex ml-auto bg-red-500 p-4 items-center gap-12">
+            <li>
+                <a href="/register">Register</a>
+            </li>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+
+        </ul>
+    </nav>
     {{$slot}}
 </main>
 </body>

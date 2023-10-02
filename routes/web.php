@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 // Index Page
 Route::get('/', [TaskController::class, 'index']);
+
+// Register Page
+Route::get('/register', [AuthController::class, 'register']);
