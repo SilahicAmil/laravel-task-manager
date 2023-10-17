@@ -17,5 +17,11 @@ use Illuminate\Support\Facades\Route;
 // Index Page
 Route::get('/', [TaskController::class, 'index']);
 
+// Show Create Form
+Route::get('/create', [TaskController::class, 'create']);
+
+// Create Task
+Route::post('/tasks', [TaskController::class, 'store']);
+
 // Register Page
 Route::get('/register', [AuthController::class, 'register']);
