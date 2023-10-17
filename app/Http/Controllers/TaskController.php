@@ -22,7 +22,7 @@ class TaskController extends Controller
     public function store(Request $request
     ): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application {
         // Store Task Data Here
-        dd($request);
+//        dd($request);
         //     Need to add Alpine Js or something similiar
         return redirect('/')->with('message', "Task Created!");
     }
