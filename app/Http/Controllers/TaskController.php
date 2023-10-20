@@ -10,7 +10,7 @@ class TaskController extends Controller
     public function index(
     ): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        $tasks = Task::latest()->paginate(4);
+        $tasks = Task::latest()->paginate(5);
         return view('welcome', ['tasks' => $tasks]);
     }
 
