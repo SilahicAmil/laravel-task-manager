@@ -18,7 +18,9 @@
             <li>
                 <a href="/login">Login</a>
             </li>
-
+            <li>
+                <a href="/tasks/create">Create</a>
+            </li>
         </ul>
     </nav>
     {{$slot}}
