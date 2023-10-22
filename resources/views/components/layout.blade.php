@@ -13,6 +13,7 @@
 <body>
 
     <nav class="flex h-12">
+        <div><a href="/" class="flex items-center h-full ml-5">Home</a></div>
         <ul class="flex ml-auto bg-red-500 p-4 items-center gap-12">
             <li>
                 <a href="/register">Register</a>

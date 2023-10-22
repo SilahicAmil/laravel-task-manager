@@ -39,7 +39,7 @@ class TaskController extends Controller
     public function show(Task $task): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('tasks.show', [
-//            whatever is put here needs to be the same in the "/{name}" in web.php
+            //  whatever is put here needs to be the same in the "/{name}" in web.php
             'task' => $task
         ]);
     }

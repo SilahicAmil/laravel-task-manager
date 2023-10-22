@@ -30,4 +30,10 @@ Route::post('/tasks', [TaskController::class, 'store']);
 // Register Page
 Route::get('/register', [AuthController::class, 'register']);
 
+// Register User
+Route::post('/users/register', [AuthController::class, 'store']);
+
+// Show Login Page
+Route::get('/login', [AuthController::class, 'login']);
+
 

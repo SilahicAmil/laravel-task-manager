@@ -1,6 +1,5 @@
 <x-layout>
-    <h1>Hello World</h1>
-    <ul>
+    <ul class="mt-10">
         @foreach($tasks as $task)
             <x-task-card :tasks='$task'/>
         @endforeach
