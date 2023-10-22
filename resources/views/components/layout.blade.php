@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.js" defer></script>
+
 </head>
 <body>
-<main>
+
     <nav class="flex h-12">
         <ul class="flex ml-auto bg-red-500 p-4 items-center gap-12">
             <li>
@@ -23,7 +25,8 @@
             </li>
         </ul>
     </nav>
-    {{$slot}}
-</main>
+
+<main>{{$slot}}</main>
+<x-flash-message></x-flash-message>
 </body>
 </html>

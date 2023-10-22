@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,8 +21,13 @@ Route::get('/', [TaskController::class, 'index']);
 // Show Create Form
 Route::get('/tasks/create', [TaskController::class, 'create']);
 
+// Show Task
+Route::get('/task/{task}', [TaskController::class, 'show']);
+
 // Create Task
-Route::post('/tasks/create', [TaskController::class, 'store']);
+Route::post('/tasks', [TaskController::class, 'store']);
 
 // Register Page
 Route::get('/register', [AuthController::class, 'register']);
+
+
