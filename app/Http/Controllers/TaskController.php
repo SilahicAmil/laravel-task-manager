@@ -10,7 +10,7 @@ class TaskController extends Controller
     public function index(
     ): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
-        $tasks = Task::latest()->paginate(5);
+        $tasks = Task::latest()->paginate(10);
         return view('welcome', ['tasks' => $tasks]);
     }
 
@@ -21,9 +21,17 @@ class TaskController extends Controller
 
     public function store(Request $request
     ): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application {
-        // Store Task Data Heres
-//        dd($request);
-        //     Need to add Alpine Js or something similiar
+
+
+        $formFields = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'due_date' => 'required',
+            'priority' => 'required',
+        ]);
+
+        Task::create($formFields);
+
         return redirect('/')->with('message', 'Task Created!');
     }
 
@@ -31,6 +39,7 @@ class TaskController extends Controller
     public function show(Task $task): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         return view('tasks.show', [
+//            whatever is put here needs to be the same in the "/{name}" in web.php
             'task' => $task
         ]);
     }
