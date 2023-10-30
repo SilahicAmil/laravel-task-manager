@@ -33,4 +33,36 @@ class AuthController extends Controller
     {
         return view('users.register');
     }
+
+    public function login()
+    {
+        return view('users.login');
+    }
+
+    public function logout(Request $request)
+    {
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('message', 'Logged Out!');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $formFields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+
+            return redirect('/')->with('message', 'Logged In!');
+        } else {
+            return back()->withErrors(['email' => 'Invalid Login']);
+        }
+    }
+
 }

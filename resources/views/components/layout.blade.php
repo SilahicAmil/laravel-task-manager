@@ -15,15 +15,26 @@
     <nav class="flex h-12">
         <div><a href="/" class="flex items-center h-full ml-5">Home</a></div>
         <ul class="flex ml-auto bg-red-500 p-4 items-center gap-12">
-            <li>
-                <a href="/register">Register</a>
-            </li>
-            <li>
-                <a href="/login">Login</a>
-            </li>
+            @auth
             <li>
                 <a href="/tasks/create">Create</a>
             </li>
+                <li>
+                    <form method="POST" action="/logout">
+                        @csrf
+                        <button>Logout</button>
+                    </form>
+                </li>
+            @else
+
+                <li>
+                <a href="/register">Register</a>
+            </li>
+
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            @endauth
         </ul>
     </nav>
 

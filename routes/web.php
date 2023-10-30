@@ -27,13 +27,20 @@ Route::get('/task/{task}', [TaskController::class, 'show']);
 // Create Task
 Route::post('/tasks', [TaskController::class, 'store']);
 
-// Register Page
-Route::get('/register', [AuthController::class, 'register']);
 
 // Register User
 Route::post('/users/register', [AuthController::class, 'store']);
 
+// Login User
+Route::post('/users/authenticate', [AuthController::class, 'authenticate']);
+
+// Show Register Page
+Route::get('/register', [AuthController::class, 'register']);
+
 // Show Login Page
 Route::get('/login', [AuthController::class, 'login']);
+
+// Logout User
+Route::post('/logout', [AuthController::class, 'logout']);
 
 
