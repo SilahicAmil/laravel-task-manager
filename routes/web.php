@@ -24,9 +24,11 @@ Route::get('/tasks/create', [TaskController::class, 'create']);
 // Show Task
 Route::get('/task/{task}', [TaskController::class, 'show']);
 
+// Delete Task
+Route::delete('/task/{task}/delete', [TaskController::class, 'delete']);
+
 // Create Task
 Route::post('/tasks', [TaskController::class, 'store']);
-
 
 // Register User
 Route::post('/users/register', [AuthController::class, 'store']);
