@@ -6,7 +6,6 @@
 
         <form method="POST" action="/users/authenticate">
             @csrf
-
             <div class="mb-6">
                 <label for="email" class="inline-block text-lg mb-2">Email</label>
                 <label>
