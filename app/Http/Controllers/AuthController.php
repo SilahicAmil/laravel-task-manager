@@ -8,8 +8,6 @@ use Illuminate\Validation\Rule;
 
 class AuthController extends Controller
 {
-    //
-
     public function store(Request $request): \Illuminate\Foundation\Application|\Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Foundation\Application
     {
         $formFields = $request->validate([
